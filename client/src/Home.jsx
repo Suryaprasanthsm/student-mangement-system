@@ -5,9 +5,9 @@ import axios from 'axios';
 
 const Home = () => {
   const [students, setStudents] = useState([]);
-  const navigate = useNavigate(); // For programmatically navigating
+  const navigate = useNavigate(); 
 
-  // Fetching students data from backend (Express + MySQL)
+  
   useEffect(() => {
     fetchStudents();
   }, []);
@@ -15,23 +15,23 @@ const Home = () => {
   const fetchStudents = () => {
     axios.get('http://localhost:5000/')
       .then(response => {
-        setStudents(response.data); // Set students data from backend
+        setStudents(response.data); 
       })
       .catch(error => console.error('Error fetching students:', error));
   };
 
-  // Deleting a student
+  
   const deleteStudent = (id) => {
     axios.delete(`http://localhost:5000/delete/${id}`)
       .then(() => {
-        setStudents(students.filter(student => student.id !== id)); // Update state after deleting
+        setStudents(students.filter(student => student.id !== id)); 
       })
       .catch(error => console.error('Error deleting student:', error));
   };
 
-  // Navigating to the UpdateRecord page with the student ID
+  
   const handleUpdate = (id) => {
-    navigate(`/update/${id}`); // Redirect to update page with the student ID
+    navigate(`/update/${id}`); 
   };
 
   return (
