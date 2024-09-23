@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2? family=Inter:weight@100..900&display=swap");
+
+*{
+  font-family: "Inter" sans-serif;
+  box-sizing: border-box;
+  margin:0;
+  padding: 0%;
+
+}
+.container{
+  max-width: 600px;
+  margin: 20px auto;
+
+}
+h3{
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  outline: none dashed white;
+  color:darkslategray;
+}
+.btn{
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ccc;
+  text-decoration: none;
+}
+.green{
+  background-color: green;
+}
+.btn.green:hover{
+background-color: #2bc032;
+}
+
+.red{
+  background-color: red;
+}
+
+.btn.red:hover{
+background-color: rgb(231, 13, 13);
+
+}
+
+.input input{
+  width: 300px;
+  padding: 6px;
+  border-radius: 4px;
+  border:1px solid #ccc;
+  outline: none;
+
+}
+.input{
+  display:flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  cursor: pointer;
+  
+
+}
+.table th,
+.table td{
+  border-style: none;
+  padding: 8px;
+  text-align: center;
+}
+table th{
+  background-color: #f2f2f2;
+}
+.table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+.formedit{
+  
+  width:300px;
+  height: 390px;
+  padding: 10px;
+  margin-left: 600px;
+  margin-top: 100px;
+  padding-bottom: 10px;
+  text-align: center;
+  border: 2px solid black;
+  height: fit-content;
+}
+.label{
+  padding: 5px;
+  padding-top: 5px;
+}
+.btn1{
+  background-color: black;
+  color: #ccc;
+  padding: 2px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+.btn2{
+  background-color: black;
+  color:#ccc;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+  
+
+
