@@ -4,38 +4,38 @@ import axios from 'axios';
 import './App.css';
 
 const UpdateRecord = () => {
-    const { id } = useParams();  // Get the student's ID from the URL
+    const { id } = useParams();  
     const navigate = useNavigate();
 
-    // State to store student data
+    
     const [student, setStudent] = useState({
         firstname: '',
         lastname: '',
         age: '',
-        dob: '',  // New state field for DOB
+        dob: '',  
         location: ''
     });
 
-    const [error, setError] = useState(''); // State to handle errors
-    const [loading, setLoading] = useState(false); // State to handle loading
+    const [error, setError] = useState(''); 
+    const [loading, setLoading] = useState(false); 
 
-    // Fetch the student details when the component loads
+    
     useEffect(() => {
         axios.get(`http://localhost:5000/read/${id}`)
             .then(response => {
-                const data = response.data[0]; // Get the student object from response
+                const data = response.data[0]; 
                 setStudent({
                     firstname: data.firstname,
                     lastname: data.lastname,
                     age: data.age,
-                    dob: data.dob,  // Set the DOB fetched from backend
+                    dob: data.dob,  
                     location: data.location
                 });
             })
             .catch(error => setError('Error fetching student details.'));
     }, [id]);
 
-    // Handles input changes
+    
     const handleChange = (e) => {
         setStudent({
             ...student,
@@ -43,7 +43,7 @@ const UpdateRecord = () => {
         });
     };
 
-    // Handles form submission for updating student
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
@@ -52,7 +52,7 @@ const UpdateRecord = () => {
             .then(response => {
                 console.log('Student updated:', response.data);
                 setLoading(false);
-                navigate('/');  // Redirect to home page after successful update
+                navigate('/');  // 
             })
             .catch(error => {
                 setError('Error updating the student.');
@@ -60,7 +60,7 @@ const UpdateRecord = () => {
             });
     };
 
-    // Handles "Back" button click to navigate to the home page
+    
     const handleBack = () => {
         navigate('/');
     };
