@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Axios for making HTTP requests
+import axios from 'axios';
 
 const AddRecord = () => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [age, setAge] = useState('');
-  const [dob, setDob] = useState(''); // New state for DOB
+  const [dob, setDob] = useState(''); 
   const [location, setLocation] = useState('');
-  const navigate = useNavigate();  // Allows navigation between pages
+  const navigate = useNavigate();  
 
   // Handles form submission
   const handleSubmit = (e) => {
@@ -18,16 +18,16 @@ const AddRecord = () => {
     const newStudent = {
       firstname,
       lastname,
-      age: parseInt(age, 10), // Convert age to an integer
-      dob,  // Add DOB to the student object
+      age: parseInt(age, 10), 
+      dob,  
       location,
     };
 
-    // POST request to the Express backend to add a new student
-    axios.post('http://localhost:5000/students', newStudent) // Ensure this matches backend route
+    
+    axios.post('http://localhost:5000/students', newStudent) 
       .then(response => {
         console.log('Student added:', response.data);
-        // Navigate to the home page after successful submission
+        
         navigate('/');
       })
       .catch(error => {
@@ -35,7 +35,7 @@ const AddRecord = () => {
       });
   };
 
-  // Handles "Back" button click to navigate to the home page
+  
   const handleBack = () => {
     navigate('/');
   };
